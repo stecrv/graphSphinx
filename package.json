@@ -1,0 +1,20 @@
+{
+  "name": "timeseries",
+  "version": "0.0.1",
+  "description": "The data in the data.json file represent the data point to be plotted on a line graph.",
+  "main": "src/index.js",
+  "scripts": {
+    "start": "node ./src/index.js",
+    "test": "jest",
+    "test:watch": "npm run test -- --watchAll",
+    "test:debug": "node --inspect node_modules/.bin/jest --runInBand"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "lodash": "^4.17.15"
+  },
+  "devDependencies": {
+    "jest": "^26.0.1"
+  }
+}

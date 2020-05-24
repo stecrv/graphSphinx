@@ -1,0 +1,10 @@
+{
+  "data": [
+    {
+      "title": "Overall",
+      "type": "aggregation",
+      "id": 42,
+      "slug": "aggregation-overall"
+    }
+  ]
+}

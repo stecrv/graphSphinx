@@ -1,0 +1,16 @@
+{
+  "data": [
+    {
+      "details": [
+        {
+          "series": [],
+          "key": "extra"
+        }
+      ],
+      "title": "Overall",
+      "type": "aggregation",
+      "id": 42,
+      "slug": "aggregation-overall"
+    }
+  ]
+}

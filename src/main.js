@@ -36,6 +36,7 @@ const timeSeries = (startingDate, endingDate, data, opt = {}) => {
     endingDate,
     options.exactDateMatch
   );
+
   const result = {
     start_date: startingDate,
     end_date: endingDate,

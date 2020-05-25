@@ -32,3 +32,20 @@ The data in the data.json file represent the data point to be plotted on a line 
   - Start_date and end_date don’t match the “x” key in the serie
 
 - Consider that we want to display the data with the key “extra” on mouse over on a point of the key “score”. Write a function to format the data for this use case. 
+
+
+___________________________________________________
+## Solution
+
+### Install
+- open a terminal in the project directory, and install dependencies  `npm i`
+- Please run either `npm start` or `npm t`
+
+### Node  version
+Code has been develop on node  12.16.1 
+
+### Note
+Main Function has been include in the file `src/main.js` while use cases are inside on `src/index.js`.
+
+
+Tests are simple as possible but could be expanded. 

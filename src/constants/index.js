@@ -1,6 +1,7 @@
 const defaultOptions = {
   /*
-  Consider that we want to display the data with the key “extra” associated with  “score”. Write a function to format the data for this use case.
+  Consider that we want to display the data with the key “extra” associated with  “score”.
+  Write a function to format the data for this use case.
   */
   returnExtraValues: false,
   /*
@@ -13,9 +14,9 @@ const defaultOptions = {
   startEndDateMandatory: true,
 };
 
-const AGGREGATION_TYPE = "aggregation-overall";
-const AGGREGATION_KEY = "slug";
-const DETAILS_KEY = "key";
+const AGGREGATION_TYPE = 'aggregation-overall';
+const AGGREGATION_KEY = 'slug';
+const DETAILS_KEY = 'key';
 
 module.exports = {
   AGGREGATION_TYPE,

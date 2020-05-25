@@ -1,33 +1,40 @@
-"use strict";
 
-const _ = require("lodash");
 
-const { isBeforeDate, isValidDate } = require("./functions/date");
-const { sliceTimeSeries, getSequence } = require("./functions/series");
-const { defaultOptions } = require("./constants");
+const _ = require('lodash');
+
+const { isBeforeDate, isValidDate } = require('./functions/date');
+const { sliceTimeSeries, getSequence } = require('./functions/series');
+const { defaultOptions } = require('./constants');
 
 const timeSeries = (startingDate, endingDate, data, opt = {}) => {
   // set default options
-  const options = Object.assign({}, defaultOptions, opt);
+  const options = { ...defaultOptions, ...opt };
   // validate data
   const series = getSequence(data);
 
   if (!series) {
-    throw "Invalid data set";
+    throw 'Invalid data set';
   }
 
   // check dates
   if (options.startEndDateMandatory) {
-    if(_.isNil(startingDate) ||
-    _.isNil(endingDate) ||
-    !isValidDate(startingDate) ||
-    !isValidDate(endingDate) ||
-    !isBeforeDate(startingDate, endingDate)) {
-      throw "Insert valid date values";
+    if (_.isNil(startingDate) || _.isNil(endingDate)) {
+      throw 'Insert starting and ending dates';
     }
   } else if (!options.startEndDateMandatory) {
-      if(_.isNil(startingDate)) {startingDate = series.score[0].x;}
-      if(_.isNil(endingDate)) {endingDate = series.score[series.length - 1].x;}
+    if (_.isNil(startingDate)) {
+      startingDate = series.score[0].x;
+    }
+    if (_.isNil(endingDate)) {
+      endingDate = series.score[series.length - 1].x;
+    }
+  }
+
+  if (!isValidDate(startingDate) ||
+    !isValidDate(endingDate) ||
+    !isBeforeDate(startingDate, endingDate)
+  ) {
+    throw 'Insert valid date values';
   }
 
   const slicedScore = sliceTimeSeries(
@@ -44,7 +51,12 @@ const timeSeries = (startingDate, endingDate, data, opt = {}) => {
   };
 
   if (options.returnExtraValues) {
-    const slicedExtra = sliceTimeSeries(series.extra, startingDate, endingDate, options.exactDateMatch);
+    const slicedExtra = sliceTimeSeries(
+      series.extra,
+      startingDate,
+      endingDate,
+      options.exactDateMatch,
+    );
     result.extra = slicedExtra;
   }
 
